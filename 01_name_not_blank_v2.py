@@ -16,3 +16,5 @@ def not_blank (question, error_message ):
 
 #Main routine goes here 
 name = not_blank("Name: ")
+
+print("Miss says hi")
