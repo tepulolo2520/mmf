@@ -1,17 +1,24 @@
-# Functions go here 
+# import statements 
 
-def not_blank (question):
+
+# functions go here 
+
+
+# checks that input is not blank
+def not_blank (question, error_message ):
       valid= False 
 
       while not valid:
-            response = input (question) 
+            response = input(question) 
             
             if response !="":
                   return response
                   
             else: 
-                  print("sorry - this can't be blank")
+                  print(error_message)
 
+
+# checks for numbers between a high and low number
 def int_check (question, low_num, high_num) :
 
     
@@ -36,35 +43,34 @@ def int_check (question, low_num, high_num) :
 
 
 
-#Main routine goes here 
-
+# initialise loop so that it runs at least once 
 name = ""
 count = 0
-MAX_TICKETS = 5 
-
-name = not_blank("Name: ")
+MAX_TICKETS = 5
 
 while name != "xxx"  and  count < MAX_TICKETS: 
-    
-    # tells user how many seats are left! 
-    if count < 4:
-        print( "You have {} seats ""Left".format (MAX_TICKETS - count))
-      # Warns user that only one seat is left!
-    else: 
-        print("*** There is one seat left!! ***")
-        
-      # Get details...
-    name = not_blank("Name: ")
+    print ("You have {} seats left".format(MAX_TICKETS - count))
+
+# Get details...
+    print()
+    name = not_blank("Name: ", "Don't be shy")
+    if name == "xxx":
+        break
+
     count += 1
     print()
 
-    age = int_check("Age: ", 12, 130) 
+    # main routine goes here 
+    age = int_check("Age: ", 12,  130) 
 
-# Calculate profit etc
+
+
+
+# end of the loop if the exit code is entered
 if count == MAX_TICKETS: 
-    print("You have sold al available tickets!")
+    print("You have sold all available tickets!")
 else:
-    print ("You have sold {} tickets.  \n" 
-    "There are {} places still available" 
-    .format (count, MAX_TICKETS - count))
+    print ("You have sold {} tickets. There are {} places still available".format (count, MAX_TICKETS - count))
+
+
 
