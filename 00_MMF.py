@@ -67,4 +67,3 @@ else:
     print ("You have sold {} tickets.  \n" 
     "There are {} places still available" 
     .format (count, MAX_TICKETS - count))
-

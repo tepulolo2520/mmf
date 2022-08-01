@@ -1,3 +1,48 @@
+# import statements 
+import re
+import pandas 
+
+
+# function goes here 
+
+# checks that ticket name is not blank 
+def not_blank(question):
+    valid= False 
+
+    while not valid:
+            response = input (question) 
+            
+            if response !="":
+                return response
+                  
+            else: 
+             print("sorry - this can't be blank")
+
+def int_check (question, low_num, high_num) :
+
+    
+    error =  "Please enter a whole number between {} and {}".format(low_num, high_num)
+    
+    valid = False 
+    while not valid:
+
+        # ask user for number and check if its valid 
+        try: 
+            response = int(input(question)) 
+            # return response 
+
+            if low_num <= response <= high_num: 
+                return response 
+            else:         
+                print( error )
+
+        # if an interger is not entered, display an error 
+        except ValueError:
+            pass
+
+
+
+#Main routine goes here 
 name = ""
 
 ticket_count = 0
@@ -50,13 +95,5 @@ else:
     ticket_price = 6.5 
 
 ticket_count += 1 
- 
-# End of ticket loop
 
-# Calculate profit etc...
-if ticket_count == MAX_TICKETS: 
-    print ("You have sold all the available tickets!")
-else:
-    print("you have sold {} tickets.  \n"
-          "There are {} places still available"
-          .format (ticket_count, MAX_TICKETS -ticket_count ) )
+
